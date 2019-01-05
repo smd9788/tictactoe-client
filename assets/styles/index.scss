@@ -1,1 +1,21 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: cyan;
+}
+
+.container {
+  display: block;
+  font-family: Calibri;
+  font-size: 30px;
+  height: 600px;
+  margin: 50px auto 0;
+  padding: 0;
+  text-align: center;
+  width: 600px;
+}
+
+.col-4 {
+  border: 1px solid #1c1c1c;
+  height: 200px;
+}

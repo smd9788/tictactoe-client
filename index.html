@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>tictactoe-client</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="./assets/styles/index.scss">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic-Tac-Toe</h1>
+      <div id="game-board" class="container">
+        <div class="row">
+          <div id='cell-one' class="col-4 col-md-4 col-lg-4">Cell 1</div>
+          <div id='cell-two' class="col-4 col-md-4 col-lg-4">Cell 2</div>
+          <div id='cell-three' class="col-4 col-md-4 col-lg-4">Cell 3</div>
+        </div>
+        <div class="row">
+          <div id='cell-four' class="col-4 col-md-4 col-lg-4">Cell 4</div>
+          <div id='cell-five' class="col-4 col-md-4 col-lg-4">Cell 5</div>
+          <div id='cell-six' class="col-4 col-md-4 col-lg-4">Cell 6</div>
+        </div>
+        <div class="row">
+          <div id='cell-seven' class="col-4 col-md-4 col-lg-4">Cell 7</div>
+          <div id='cell-eight' class="col-4 col-md-4 col-lg-4">Cell 8</div>
+          <div id='cell-nine' class="col-4 col-md-4 col-lg-4">Cell 9</div>
+        </div>
+      </div>
     </body>
 </html>
