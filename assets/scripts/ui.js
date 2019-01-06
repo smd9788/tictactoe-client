@@ -16,14 +16,21 @@ const onSignInSuccess = (responseData) => {
 const onSignInFailure = () => {
   $('#user-message').text('incorrect email or password. Try again')
 }
+const onChangePasswordSuccess = (responseData) => {
+  $('#user-message').text('passwored changed successfully')
+  console.log('store is:', store)
+}
+const onChangePasswordFailure = () => {
+  $('#user-message').text('error. invalid new password')
+}
 
 module.exports = {
   onSignUpSuccess: onSignUpSuccess,
   onSignUpFailure: onSignUpFailure,
   onSignInSuccess: onSignInSuccess,
-  onSignInFailure: onSignInFailure
-  // onChangePasswordSuccess: onChangePasswordSuccess,
-  // onChangePasswordFailure: onChangePasswordFailure,
+  onSignInFailure: onSignInFailure,
+  onChangePasswordSuccess: onChangePasswordSuccess,
+  onChangePasswordFailure: onChangePasswordFailure
   // onSignOutSuccess: onSignOutSuccess,
   // onSignOutFailure: onSignOutFailure
 }

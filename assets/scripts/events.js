@@ -18,6 +18,14 @@ const onSignIn = (event) => {
     .catch(ui.onSignInFailure)
   $('form').trigger('reset')
 }
+const onChangePassword = (event) => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  api.changePassword(formData)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onChangePasswordFailure)
+  $('form').trigger('reset')
+}
 // const gameBoardArray = () => {
 //   const emptyBoard = ['', '', '', '', '', '', '', '', '']
 //   return emptyBoard
@@ -31,6 +39,7 @@ const onSignIn = (event) => {
 
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onChangePassword
   // gameBoardArray
 }
