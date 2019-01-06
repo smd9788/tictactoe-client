@@ -10,6 +10,14 @@ const onSignUp = (event) => {
     .catch(ui.onSignUpFailure)
   $('form').trigger('reset')
 }
+const onSignIn = (event) => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  api.signIn(formData)
+    .then(ui.onSignInSuccess)
+    .catch(ui.onSignInFailure)
+  $('form').trigger('reset')
+}
 // const gameBoardArray = () => {
 //   const emptyBoard = ['', '', '', '', '', '', '', '', '']
 //   return emptyBoard
@@ -22,6 +30,7 @@ const onSignUp = (event) => {
 // console.log(gameBoardArray)
 
 module.exports = {
-  onSignUp
+  onSignUp,
+  onSignIn
   // gameBoardArray
 }

@@ -9,4 +9,5 @@ const gameEvents = require('./events')
 $(() => {
   $('#game-board').on('click', gameEvents.gameClient)
   $('#sign-up').on('submit', gameEvents.onSignUp)
+  $('#sign-in').on('submit', gameEvents.onSignIn)
 })
