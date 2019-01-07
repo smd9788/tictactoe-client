@@ -32,17 +32,6 @@ const onSignOut = (event) => {
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
 }
-// const gameBoardArray = () => {
-//   const emptyBoard = ['', '', '', '', '', '', '', '', '']
-//   return emptyBoard
-// }
-
-// const playerMove = () => {
-//   gameBoardArray.push(1)
-// }
-// console.log(playerMove)
-// console.log(gameBoardArray)
-
 module.exports = {
   onSignUp,
   onSignIn,
