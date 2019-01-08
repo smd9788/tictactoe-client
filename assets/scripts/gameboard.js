@@ -1,18 +1,35 @@
 // start with blank gameboard gameboard array
 const gameBoardArray = []
+const startTurn = 0
+// const p1select = document.getElementById('player-one-select')
+// const p2select = document.getElementById('player-two-select')
+// choose player
+// const choosePlayer = (event) => {
+//                          players array. X and O are the values
+//   const players = [selectP1.value, selectP2.value]
+//   const selection = (click) => {
+//   }
+// }
 
-// set up click handler to push player move to array and render an 'X'
+// set up click handler to push player move to array and render a game piece
 const clickSquare = (event) => {
   const move = event.target.id
-  gameBoardArray.push(move)
-  document.getElementById(move).append('X')
+  const placeXpiece = () => {
+    gameBoardArray.push('X')
+    document.getElementById(move).append('X')
+  }
+  const placeOpiece = () => {
+    gameBoardArray.push('O')
+    document.getElementById(move).append('O')
+  }
+  if (gameBoardArray.length % 2) {
+    placeOpiece()
+  } else {
+    placeXpiece()
+  }
+  console.log('Gameboard array is:', gameBoardArray)
 }
-// while (gameBoardArray.length < 9) {
-// // playerMove = gameBoard(event.target)
-//   // console.log(event.target)
-//   gameBoardArray.push(gameBoard)
-// }
-// console.log('contents are: ', gameBoardArray)
+
 // // setup click handler to display 'X' in cell on click
 // const placeGameMarker = (gameBoard) => {
 //   if (gameBoard.gameBoardArray.length === ) {
@@ -37,6 +54,6 @@ function checkGameOver (gameBoard) {
 
 module.exports = {
   checkGameOver,
-  clickSquare
-  // placeGameMarker
+  clickSquare,
+  startTurn
 }
