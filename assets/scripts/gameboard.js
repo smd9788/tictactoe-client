@@ -25,7 +25,7 @@ gameBoard.drawGameBoard()
 const gameBoardCells = document.getElementsByClassName('grid-item')
 // game logic
 const gamePlay = (function () {
-  const gridCellsPlayed = []
+  let gridCellsPlayed = []
   let playerTurn = 1
   let playerHasWon = false
   const victoryMessage = document.getElementById('victory-message')
@@ -78,8 +78,17 @@ const gamePlay = (function () {
       }
     }
   }
-
-  return { gridCellsPlayed, playTurn, checkForWin, winConditions, drawXO }
+  function resetGame () {
+    for (let i = 0; i < gameBoardCells.length; i++) {
+      gameBoardCells[i].innerHTML = ''
+    }
+    playerOne.score = []
+    playerTwo.score = []
+    gridCellsPlayed = []
+    victoryMessage.innerHTML = ''
+    playerHasWon = false
+  }
+  return { gridCellsPlayed, playTurn, checkForWin, winConditions, drawXO, resetGame }
 })()
 
 const playerOne = (function () {
