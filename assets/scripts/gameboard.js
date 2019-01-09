@@ -21,7 +21,7 @@ const gameBoard = (function () {
 
 gameBoard.drawGameBoard()
 
-// set up two players as functions that build a score array
+// set up two players as functions that build a score array and return as objects
 const playerOne = (function () {
   const score = []
   return { score }
@@ -89,6 +89,8 @@ const gamePlay = (function () {
         playerHasWon = true
         victoryMessage.innerHTML = 'Player ' + playerWinner + ' wins!'
         return console.log('Player ' + playerWinner + ' wins!')
+      } else if (playerOne.score.length > 4) {
+        victoryMessage.innerHTML = 'The game is a draw'
       }
     }
   }
