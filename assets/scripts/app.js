@@ -1,5 +1,6 @@
 'use strict'
 const gameEvents = require('./events')
+const gameboardFile = require('./gameboard.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -7,9 +8,9 @@ const gameEvents = require('./events')
 // require('./example')
 
 $(() => {
-  $('#game-board').on('click', gameEvents.gameClient)
   $('#sign-up').on('submit', gameEvents.onSignUp)
   $('#sign-in').on('submit', gameEvents.onSignIn)
   $('#change-password').on('submit', gameEvents.onChangePassword)
   $('#sign-out').on('click', gameEvents.onSignOut)
+  $('#reset-game').on('click', gameboardFile.gamePlay.resetGame)
 })
