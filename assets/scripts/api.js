@@ -35,11 +35,21 @@ const signOut = () => {
     method: 'DELETE'
   })
 }
+const getGameIndex = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'GET'
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  store
+  store,
+  getGameIndex
 }

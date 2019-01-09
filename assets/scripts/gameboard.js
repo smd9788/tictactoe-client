@@ -63,7 +63,7 @@ const gamePlay = (function () {
   }
 
   const drawXO = function (gameBoardCell) {
-    const boardMarker = document.createElement('h1')
+    const boardMarker = document.createElement('h2')
     if (playerTurn === 1) {
       boardMarker.innerHTML = 'X'
     } else {
