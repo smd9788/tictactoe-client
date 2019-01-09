@@ -16,6 +16,10 @@
 
 <body>
   <header>
+    <nav class="nav nav-pills justify-content-right">
+      <a class="nav-link active" href="#">Active</a>
+      <a class="nav-link" href="#">Longer nav link</a>
+    </nav>
     <h1>TIC-TAC-TOE</h1>
   </header>
   <div class='container'>
@@ -30,29 +34,29 @@
       <button id='reset-game'>Reset</button>
     </div>
   </div>
-  <!-- <h4>Sign Up</h4>
-      <form id='sign-up'>
-        <input type="text" name="credentials[email]" placeholder="email goes here">
-        <input type="text" name="credentials[password]" placeholder="password goes here">
-        <input type="text" name="credentials[password_confirmation]" placeholder="confirm password">
-        <input type="submit">
-      </form>
-      <h4>Sign In</h4>
-      <form id='sign-in'>
-        <input type="text" name="credentials[email]" placeholder="email goes here">
-        <input type="text" name="credentials[password]" placeholder="password goes here">
-        <input type="submit">
-      </form>
-      <h4>Change password</h4>
-      <form id='change-password'>
-        <input type="text" name="passwords[old]" placeholder="old password">
-        <input type="text" name="passwords[new]" placeholder="new password">
-        <input type="submit">
-      </form>
-      <h3 id='user-message'></h3> -->
-  <footer>
-    <input id='sign-out' type="submit" value="Log Out">
-  </footer>
+  <div class = 'credentials-menu'>
+    <h4>Sign Up</h4>
+        <form id='sign-up'>
+          <input type="text" name="credentials[email]" placeholder="email goes here">
+          <input type="text" name="credentials[password]" placeholder="password goes here">
+          <input type="text" name="credentials[password_confirmation]" placeholder="confirm password">
+          <input type="submit">
+        </form>
+        <h4>Sign In</h4>
+        <form id='sign-in'>
+          <input type="text" name="credentials[email]" placeholder="email goes here">
+          <input type="text" name="credentials[password]" placeholder="password goes here">
+          <input type="submit">
+        </form>
+        <h4>Change password</h4>
+        <form id='change-password'>
+          <input type="text" name="passwords[old]" placeholder="old password">
+          <input type="text" name="passwords[new]" placeholder="new password">
+          <input type="submit">
+        </form>
+        <h3 id='user-message'></h3>
+      <input id='sign-out' type="submit" value="Log Out">
+    </div>
 </body>
 
 

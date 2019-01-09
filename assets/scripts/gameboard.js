@@ -21,6 +21,17 @@ const gameBoard = (function () {
 
 gameBoard.drawGameBoard()
 
+// set up two players as functions that build a score array
+const playerOne = (function () {
+  const score = []
+  return { score }
+})()
+
+const playerTwo = (function () {
+  const score = []
+  return { score }
+})()
+
 // get the cells we just created in the drawGameBoard function
 const gameBoardCells = document.getElementsByClassName('grid-item')
 // game logic
@@ -30,11 +41,14 @@ const gamePlay = (function () {
   let playerHasWon = false
   const victoryMessage = document.getElementById('victory-message')
   const playTurn = function (score) {
+    // first check whos turn it is. then push their marker to their respective score array
     if (playerTurn === 1 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerOne.score.push(score)
       gridCellsPlayed.push(score)
+      // check for win immediately after move is pushed to score array
       gamePlay.checkForWin(gamePlay.winConditions, playerOne.score, 'one')
       drawXO(gameBoardCells[score])
+      // set playerTurn to player two's turn
       playerTurn = 2
       return playerTurn
     }
@@ -82,6 +96,7 @@ const gamePlay = (function () {
     for (let i = 0; i < gameBoardCells.length; i++) {
       gameBoardCells[i].innerHTML = ''
     }
+    playerTurn = 1
     playerOne.score = []
     playerTwo.score = []
     gridCellsPlayed = []
@@ -91,21 +106,12 @@ const gamePlay = (function () {
   return { gridCellsPlayed, playTurn, checkForWin, winConditions, drawXO, resetGame }
 })()
 
-const playerOne = (function () {
-  const score = []
-  return { score }
-})()
-
-const playerTwo = (function () {
-  const score = []
-  return { score }
-})()
-
 function arrayContainsArray (arrayOne, arrayTwo) {
   return arrayOne.every(function (value) {
     return arrayTwo.indexOf(value) > -1
   })
 }
+
 module.exports = {
   gameBoard,
   gameBoardCells,

@@ -1,7 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -9,13 +8,13 @@
 body {
   background: #001133;
   color: #ff6600;
-  display: flex;
   font-family: 'Nunito', sans-serif;
 }
 
 header {
+  display: block;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
   width: 100%;
 }
@@ -24,6 +23,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  width: 600px;
 }
 
 .game-board-container {
@@ -36,11 +36,14 @@ header {
 }
 
 .grid-item {
+  align-items: center;
   border: 2px solid #ff6600;
   color: #ff6600;
+  display: inline-block;
   font-family: 'Nunito', sans-serif;
   font-size: 50px;
   height: 0;
+  justify-content: center;
   margin: 0 auto;
   padding-bottom: 33.33%;
   text-align: center;
@@ -65,47 +68,16 @@ button {
   float: right;
   font-size: 25px;
   line-height: 25px;
+  margin: 10px;
   padding: 15px;
 }
 
-@media only screen and (max-width: 1600px) {
-  .grid-item {
-    font-size: 40px;
-	}
+input {
+  border: 1px solid;
 }
 
-@media only screen and (max-width: 1366px) {
-  .container {
-    width: 40%;
-	}
-}
-
-@media only screen and (max-width: 964px) {
-  .container {
-    width: 45%;
-	}
-  .grid-item {
-    font-size: 35px;
-	}
-}
-
-@media only screen and (max-width: 800px) {
-	.container {
-		width: 60%;
-	}
-	.grid-item {
-		font-size: 30px;
-	}
-}
-
-@media only screen and (max-width: 414px) {
-	.container {
-		width: 90%;
-	}
-}
-
-@media only screen and (max-width: 320px) {
-	header {
-		margin-top: 0;
-	}
+.credentials-menu {
+  background-color: #FF6600;
+  color: #001133;
+  display: flex;
 }
