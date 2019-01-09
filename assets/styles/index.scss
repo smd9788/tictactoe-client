@@ -1,21 +1,111 @@
 @import '~bootstrap/scss/bootstrap';
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: cyan;
+  background: #001133;
+  color: #ff6600;
+  display: flex;
+  font-family: 'Nunito', sans-serif;
+}
+
+header {
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  width: 100%;
 }
 
 .container {
-  display: block;
-  font-family: Calibri;
-  font-size: 30px;
-  height: 600px;
-  margin: 50px auto 0;
-  padding: 0;
-  text-align: center;
-  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
-.col-4 {
-  border: 1px solid #1c1c1c;
-  height: 200px;
+.game-board-container {
+  border: 2px solid #ff6600;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.grid-item {
+  border: 2px solid #ff6600;
+  color: #ff6600;
+  font-family: 'Nunito', sans-serif;
+  font-size: 50px;
+  height: 0;
+  margin: 0 auto;
+  padding-bottom: 33.33%;
+  text-align: center;
+  width: 33.33%;
+}
+
+.game-over {
+  display: flex;
+  width: 100%;
+}
+
+.play-again {
+  font-size: 25px;
+  line-height: 25px;
+  width: 50%;
+}
+
+button {
+  background-color: #ff6600;
+  border: 0;
+  color: #001133;
+  float: right;
+  font-size: 25px;
+  line-height: 25px;
+  padding: 15px;
+}
+
+@media only screen and (max-width: 1600px) {
+  .grid-item {
+    font-size: 40px;
+	}
+}
+
+@media only screen and (max-width: 1366px) {
+  .container {
+    width: 40%;
+	}
+}
+
+@media only screen and (max-width: 964px) {
+  .container {
+    width: 45%;
+	}
+  .grid-item {
+    font-size: 35px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.container {
+		width: 60%;
+	}
+	.grid-item {
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 414px) {
+	.container {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	header {
+		margin-top: 0;
+	}
 }

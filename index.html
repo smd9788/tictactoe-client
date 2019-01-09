@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>tictactoe-client</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-      <link rel="stylesheet" href="./assets/styles/index.scss">
+<head>
+  <title>tictactoe-client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <input id='sign-out' type="submit" value="Log Out">
-      <h1>Tic-Tac-Toe</h1>
-      <div id="game-board" class="container">
-        <h2>Choose your player</h2>
-        <input id='player-one-select' type='submit' value='X'>
-        <input id='player-two-select' type='submit' value='O'>
-        <div class="row">
-          <div id='cell-zero' class="col-4 col-md-4 col-lg-4"></div>
-          <div id='cell-one' class="col-4 col-md-4 col-lg-4"></div>
-          <div id='cell-two' class="col-4 col-md-4 col-lg-4"></div>
-        </div>
-        <div class="row">
-          <div id='cell-three' class="col-4 col-md-4 col-lg-4"></div>
-          <div id='cell-four' class="col-4 col-md-4 col-lg-4"></div>
-          <div id='cell-five' class="col-4 col-md-4 col-lg-4"></div>
-        </div>
-        <div class="row">
-          <div id='cell-six' class="col-4 col-md-4 col-lg-4"></div>
-          <div id='cell-seven' class="col-4 col-md-4 col-lg-4"></div>
-          <div id='cell-eight' class="col-4 col-md-4 col-lg-4"></div>
-        </div>
-      </div>
-      <h4>Sign Up</h4>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="./assets/styles/index.scss">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>TIC-TAC-TOE</h1>
+  </header>
+  <div class='container'>
+    <div id="game-board" class='game-board-container'>
+    </div>
+  </div>
+  <div class="game-over">
+    <div id="victory-message">
+      <!--Victory message goes here-->
+    </div>
+    <div class="play-again">
+      <button id='reset-game'>Reset</button>
+    </div>
+  </div>
+  <!-- <h4>Sign Up</h4>
       <form id='sign-up'>
         <input type="text" name="credentials[email]" placeholder="email goes here">
         <input type="text" name="credentials[password]" placeholder="password goes here">
@@ -54,6 +49,11 @@
         <input type="text" name="passwords[new]" placeholder="new password">
         <input type="submit">
       </form>
-      <h3 id='user-message'></h3>
-    </body>
+      <h3 id='user-message'></h3> -->
+  <footer>
+    <input id='sign-out' type="submit" value="Log Out">
+  </footer>
+</body>
+
+
 </html>

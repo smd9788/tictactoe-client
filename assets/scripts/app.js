@@ -12,6 +12,5 @@ $(() => {
   $('#sign-in').on('submit', gameEvents.onSignIn)
   $('#change-password').on('submit', gameEvents.onChangePassword)
   $('#sign-out').on('click', gameEvents.onSignOut)
-  $('#game-board').on('click', gameboardFile.clickSquare)
-  $('#game-board').on('click', gameboardFile.playerChoice)
+  $('#reset-game').on('click', gameboardFile.gamePlay.resetGame)
 })
