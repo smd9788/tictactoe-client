@@ -32,10 +32,34 @@ const onSignOut = (event) => {
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
 }
+const onStartGame = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // console.log(data)
+  api.startGame(data)
+    .then(ui.onStartGameSuccess)
+    .catch(ui.onStartGameFailure)
+}
+const onFindGames = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // console.log(data)
+  api.findGames(data)
+    .then(ui.onFindGamesSuccess)
+    .catch(ui.onFindGamesFailure)
+}
+const onUpdateGame = (id, value) => {
+  // // console.log('hello')
+  api.updateGame(id, value)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
-  // gameBoardArray
+  onSignOut,
+  onStartGame,
+  onFindGames,
+  onUpdateGame
 }
