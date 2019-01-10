@@ -13,6 +13,10 @@ manipulation. The gameboard is stored as an array, each players moves build thei
 own array. The game logic then compares each players array to the win condtions
 array to determine a winner.
 
+Known bugs:
+1. in the 'events.js' file my .catch prototypes do not trigger a user-message unless already signed in
+
+
 Unsolved Problems/Missing features:
 1. messaging system for when an invalid move is made.
 2. Game API functionality. I need to implement game saving and statistics per requirements.

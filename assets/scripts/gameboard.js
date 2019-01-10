@@ -39,7 +39,7 @@ const gamePlay = (function () {
   let gridCellsPlayed = []
   let playerTurn = 1
   let playerHasWon = false
-  const victoryMessage = document.getElementById('victory-message')
+  const victoryMessage = document.getElementById('user-message')
   const playTurn = function (score) {
     // first check whos turn it is. then push their marker to their respective score array
     if (playerTurn === 1 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
