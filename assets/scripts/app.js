@@ -13,4 +13,5 @@ $(() => {
   $('#change-password').on('submit', gameEvents.onChangePassword)
   $('#sign-out').on('click', gameEvents.onSignOut)
   $('#reset-game').on('click', gameboardFile.gamePlay.resetGame)
+  $('#modal-form').on('submit', gameEvents.onSubmitForm)
 })

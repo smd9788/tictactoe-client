@@ -5,6 +5,13 @@
   padding: 0;
 }
 
+nav {
+  background-color: #ff6600;
+  font-size: 1.5rem;
+  height: 4rem;
+  margin: 1px 0;
+}
+
 body {
   background: #001133;
   color: #ff6600;
@@ -14,9 +21,13 @@ body {
 header {
   display: block;
   margin: 0 auto;
-  margin-top: 20px;
   text-align: center;
   width: 100%;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 20px 0 0;
 }
 
 h2 {
@@ -56,10 +67,13 @@ h2 {
 
 .game-over {
   display: flex;
+  margin: auto;
+  text-align: center;
   width: 100%;
 }
 
 .play-again {
+  flex-grow: 1;
   font-size: 25px;
   line-height: 25px;
   width: 50%;
@@ -69,7 +83,6 @@ button {
   background-color: #ff6600;
   border: 0;
   color: #001133;
-  float: right;
   font-size: 25px;
   line-height: 25px;
   margin: 10px;
@@ -80,6 +93,9 @@ input {
   border: 1px solid;
 }
 
+#victory-message {
+  text-align: center;
+}
 .credentials-menu {
   background-color: #FF6600;
   color: #001133;

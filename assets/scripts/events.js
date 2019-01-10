@@ -54,6 +54,11 @@ const onUpdateGame = (id, value) => {
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onUpdateGameFailure)
 }
+const onSubmitForm = (event) => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  console.log(formData)
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -61,5 +66,6 @@ module.exports = {
   onSignOut,
   onStartGame,
   onFindGames,
-  onUpdateGame
+  onUpdateGame,
+  onSubmitForm
 }
