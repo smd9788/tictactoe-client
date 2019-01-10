@@ -39,7 +39,7 @@ const gamePlay = (function () {
   let gridCellsPlayed = []
   let playerTurn = 1
   let playerHasWon = false
-  const victoryMessage = document.getElementById('victory-message')
+  const victoryMessage = document.getElementById('user-message')
   const playTurn = function (score) {
     // first check whos turn it is. then push their marker to their respective score array
     if (playerTurn === 1 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
@@ -82,6 +82,11 @@ const gamePlay = (function () {
     [1, 4, 7],
     [2, 5, 8]
   ]
+  function arrayContainsArray (arrayOne, arrayTwo) {
+    return arrayOne.every(function (value) {
+      return arrayTwo.indexOf(value) > -1
+    })
+  }
 
   function checkForWin (winConditions, playerScore, playerWinner) {
     for (let i = 0; i < winConditions.length; i++) {
@@ -107,12 +112,6 @@ const gamePlay = (function () {
   }
   return { gridCellsPlayed, playTurn, checkForWin, winConditions, drawXO, resetGame }
 })()
-
-function arrayContainsArray (arrayOne, arrayTwo) {
-  return arrayOne.every(function (value) {
-    return arrayTwo.indexOf(value) > -1
-  })
-}
 
 module.exports = {
   gameBoard,

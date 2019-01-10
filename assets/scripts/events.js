@@ -9,6 +9,7 @@ const onSignUp = (event) => {
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
   $('form').trigger('reset')
+  $('#modalRegisterForm').modal('hide')
 }
 const onSignIn = (event) => {
   event.preventDefault()
@@ -17,6 +18,7 @@ const onSignIn = (event) => {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
   $('form').trigger('reset')
+  $('#modalLoginForm').modal('hide')
 }
 const onChangePassword = (event) => {
   event.preventDefault()
@@ -25,6 +27,7 @@ const onChangePassword = (event) => {
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
   $('form').trigger('reset')
+  $('#modalChangePasswordForm').modal('hide')
 }
 const onSignOut = (event) => {
   event.preventDefault()
@@ -54,6 +57,11 @@ const onUpdateGame = (id, value) => {
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onUpdateGameFailure)
 }
+const onSubmitForm = (event) => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  console.log(formData)
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -61,5 +69,6 @@ module.exports = {
   onSignOut,
   onStartGame,
   onFindGames,
-  onUpdateGame
+  onUpdateGame,
+  onSubmitForm
 }
