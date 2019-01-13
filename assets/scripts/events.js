@@ -1,7 +1,9 @@
 const getFormFields = require('../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
+const gameboard = require('./gameboard')
 
+// AUTHENTICATION API EVENTS
 const onSignUp = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
@@ -19,6 +21,11 @@ const onSignIn = (event) => {
     .catch(ui.onSignInFailure)
   $('form').trigger('reset')
   $('#modalLoginForm').modal('hide')
+  $('#change-password-button').show()
+  $('#sign-out-button').show()
+  $('#sign-up-button').hide()
+  $('#sign-in-button').hide()
+  gameboard.gameplay()
 }
 const onChangePassword = (event) => {
   event.preventDefault()
@@ -34,11 +41,14 @@ const onSignOut = (event) => {
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
+  $('#change-password').hide()
+  $('#sign-out').hide()
 }
+
+// GAME API EVENTS
 const onStartGame = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log(data)
   api.startGame(data)
     .then(ui.onStartGameSuccess)
     .catch(ui.onStartGameFailure)
@@ -46,13 +56,11 @@ const onStartGame = (event) => {
 const onFindGames = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log(data)
   api.findGames(data)
     .then(ui.onFindGamesSuccess)
     .catch(ui.onFindGamesFailure)
 }
 const onUpdateGame = (id, value) => {
-  // // console.log('hello')
   api.updateGame(id, value)
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onUpdateGameFailure)

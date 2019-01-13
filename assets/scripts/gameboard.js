@@ -82,18 +82,21 @@ const gamePlay = (function () {
     [1, 4, 7],
     [2, 5, 8]
   ]
+
+  // callback function to compare two arrays
   function arrayContainsArray (arrayOne, arrayTwo) {
     return arrayOne.every(function (value) {
       return arrayTwo.indexOf(value) > -1
     })
   }
 
+  // use arrayContainsArray callback to compare X's and O's score to winConditions
   function checkForWin (winConditions, playerScore, playerWinner) {
     for (let i = 0; i < winConditions.length; i++) {
       if (arrayContainsArray(winConditions[i], playerScore) === true) {
         playerHasWon = true
         victoryMessage.innerHTML = 'Player ' + playerWinner + ' wins!'
-        return console.log('Player ' + playerWinner + ' wins!')
+        return victoryMessage
       } else if (playerOne.score.length > 4) {
         victoryMessage.innerHTML = 'The game is a draw'
       }
@@ -111,7 +114,7 @@ const gamePlay = (function () {
     playerHasWon = false
   }
   return { gridCellsPlayed, playTurn, checkForWin, winConditions, drawXO, resetGame }
-})()
+}())
 
 module.exports = {
   gameBoard,

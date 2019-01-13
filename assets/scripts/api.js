@@ -2,6 +2,8 @@
 const config = require('./config')
 const store = require('./store')
 
+// AUTHENTICATION API REQUESTS
+
 const signUp = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -35,6 +37,9 @@ const signOut = () => {
     method: 'DELETE'
   })
 }
+
+// GAME API REQUESTS
+
 const startGame = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -57,7 +62,6 @@ const getGameIndex = () => {
   })
 }
 const updateGame = (id, value) => {
-  // console.log('hi')
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
@@ -76,6 +80,7 @@ const updateGame = (id, value) => {
     }
   })
 }
+
 module.exports = {
   signUp,
   signIn,

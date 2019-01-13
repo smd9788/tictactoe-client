@@ -31,14 +31,18 @@ h1 {
 }
 
 h2 {
-  font-size: 10rem;
+  font-size: 7rem;
+}
+
+h4 {
+  color: white;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 600px;
+  width: 450px;
 }
 
 .game-board-container {
@@ -96,6 +100,7 @@ input {
 #victory-message {
   text-align: center;
 }
+
 .credentials-menu {
   background-color: #FF6600;
   color: #001133;

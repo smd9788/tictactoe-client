@@ -1,6 +1,10 @@
 'use strict'
 const store = require('./store')
 
+// AUTHENTICATION API UI MESSAGING
+$('#change-password-button').hide()
+$('#sign-out-button').hide()
+
 const onSignUpSuccess = (responseData) => {
   $('#user-message').text('Registration successful!')
 }
@@ -28,6 +32,8 @@ const onSignOutFailure = () => {
   $('#user-message').text('error. you are not logged in')
 }
 
+// GAME API UI MESSAGING
+
 const onStartGameSuccess = (response) => {
   $('#game-board').removeClass('hide')
   const gameData = response.game
@@ -40,25 +46,22 @@ const onStartGameSuccess = (response) => {
   $('.box').html('')
   $('#user-message').text('Successfully created a new game. Player ones turn.')
   store.turn = 0
-  // console.log('store.game is:', store.game)
-  // // console.log('store is', store)
 }
+
 const onStartGameFailure = (response) => {
-  // console.log('response is' + response)
   $('#user-message').text('Error creating a game.')
 }
+
 const onFindGamesSuccess = (response) => {
   $('#user-message').text(`Game Plays: ${response.games.length}`)
 }
 const onFindGamesFailure = (response) => {
-  // console.log('response is' + response)
   $('#user-message').text('Error finding games.')
 }
 const onUpdateGameSuccess = (response) => {
   // console.log('success response is: ', response)
 }
 const onUpdateGameFailure = (response) => {
-  // console.log('response is: ', response)
   $('#user-message').text('Error updating game.')
 }
 module.exports = {
