@@ -1,3 +1,5 @@
+const events = require('./events')
+
 const gameBoard = (function () {
   // select game board container
   const gameBoardContainer = document.getElementById('game-board')
@@ -45,16 +47,19 @@ const gamePlay = (function () {
     if (playerTurn === 1 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerOne.score.push(score)
       gridCellsPlayed.push(score)
+      events.onUpdateGame(score, 'X')
       // check for win immediately after move is pushed to score array
       gamePlay.checkForWin(gamePlay.winConditions, playerOne.score, 'one')
       drawXO(gameBoardCells[score])
       // set playerTurn to player two's turn
       playerTurn = 2
+
       return playerTurn
     }
     if (playerTurn === 2 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerTwo.score.push(score)
       gridCellsPlayed.push(score)
+      events.onUpdateGame(score, 'O')
       gamePlay.checkForWin(gamePlay.winConditions, playerTwo.score, 'two')
       drawXO(gameBoardCells[score])
       playerTurn = 1

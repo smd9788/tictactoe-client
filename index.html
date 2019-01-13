@@ -17,6 +17,9 @@
 <body>
   <header>
     <nav class="nav justify-content-end">
+      <button id="game-history-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#game-history-modal">
+        Game History
+      </button>
       <button id="sign-up-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalRegisterForm">
         Sign-Up
       </button>
@@ -130,7 +133,23 @@
       </form>
     </div>
   </div>
-
+  <div class="modal" id="game-history-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Game History</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <ul id="game-history-list" class="modal-body">
+        </ul>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class='container'>
     <div id="game-board" class='game-board-container'>
     </div>

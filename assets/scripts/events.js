@@ -1,7 +1,6 @@
 const getFormFields = require('../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
-const gameboard = require('./gameboard')
 
 // AUTHENTICATION API EVENTS
 const onSignUp = (event) => {
@@ -23,9 +22,9 @@ const onSignIn = (event) => {
   $('#modalLoginForm').modal('hide')
   $('#change-password-button').show()
   $('#sign-out-button').show()
+  $('#game-history-button').show()
   $('#sign-up-button').hide()
   $('#sign-in-button').hide()
-  gameboard.gameplay()
 }
 const onChangePassword = (event) => {
   event.preventDefault()
@@ -62,13 +61,12 @@ const onFindGames = (event) => {
 }
 const onUpdateGame = (id, value) => {
   api.updateGame(id, value)
-    .then(ui.onUpdateGameSuccess)
     .catch(ui.onUpdateGameFailure)
 }
 const onSubmitForm = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
+  return formData
 }
 module.exports = {
   onSignUp,
