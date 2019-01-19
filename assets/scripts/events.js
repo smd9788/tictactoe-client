@@ -59,8 +59,9 @@ const onFindGames = (event) => {
     .then(ui.onFindGamesSuccess)
     .catch(ui.onFindGamesFailure)
 }
-const onUpdateGame = (id, value) => {
-  api.updateGame(id, value)
+const onUpdateGame = (id, value, over) => {
+  api.updateGame(id, value, over)
+    .then(ui.onUpdateGamesSuccess)
     .catch(ui.onUpdateGameFailure)
 }
 const onSubmitForm = (event) => {

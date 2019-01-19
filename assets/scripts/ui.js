@@ -54,10 +54,14 @@ const onStartGameFailure = (response) => {
 }
 
 const onFindGamesSuccess = (response) => {
-  $('#game-history-list').append(`Game Plays: ${response.games}`)
+  $('#game-history-list').html(`Total Games Played: ${response.games.length}`)
 }
 const onFindGamesFailure = (response) => {
   $('#user-message').text('Error finding games.')
+}
+const onUpdateGameSuccess = (response) => {
+  console.log(response)
+  console.log(store.game = response.game)
 }
 const onUpdateGameFailure = (response) => {
   $('#user-message').text('Error updating game.')
@@ -75,5 +79,6 @@ module.exports = {
   onStartGameFailure: onStartGameFailure,
   onFindGamesSuccess: onFindGamesSuccess,
   onFindGamesFailure: onFindGamesFailure,
-  onUpdateGameFailure: onUpdateGameFailure
+  onUpdateGameFailure: onUpdateGameFailure,
+  onUpdateGameSuccess: onUpdateGameSuccess
 }

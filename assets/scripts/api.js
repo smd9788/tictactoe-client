@@ -51,7 +51,7 @@ const startGame = (formData) => {
     data: formData
   })
 }
-const getGameIndex = () => {
+const findGames = () => {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
@@ -61,7 +61,7 @@ const getGameIndex = () => {
     }
   })
 }
-const updateGame = (id, value) => {
+const updateGame = (id, value, over) => {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
@@ -75,7 +75,7 @@ const updateGame = (id, value) => {
           'index': id,
           'value': value
         },
-        'over': false
+        'over': over
       }
     }
   })
@@ -87,7 +87,7 @@ module.exports = {
   changePassword,
   signOut,
   store,
-  getGameIndex,
+  findGames,
   startGame,
   updateGame
 }

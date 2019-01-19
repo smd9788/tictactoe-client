@@ -1,4 +1,5 @@
 const events = require('./events')
+const store = require('./store')
 
 const gameBoard = (function () {
   // select game board container
@@ -47,9 +48,9 @@ const gamePlay = (function () {
     if (playerTurn === 1 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerOne.score.push(score)
       gridCellsPlayed.push(score)
-      events.onUpdateGame(score, 'X')
+      events.onUpdateGame(score, 'X', false)
       // check for win immediately after move is pushed to score array
-      gamePlay.checkForWin(gamePlay.winConditions, playerOne.score, 'one')
+      gamePlay.checkForWin(gamePlay.winConditions, playerOne.score, 'X')
       drawXO(gameBoardCells[score])
       // set playerTurn to player two's turn
       playerTurn = 2
@@ -59,8 +60,8 @@ const gamePlay = (function () {
     if (playerTurn === 2 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerTwo.score.push(score)
       gridCellsPlayed.push(score)
-      events.onUpdateGame(score, 'O')
-      gamePlay.checkForWin(gamePlay.winConditions, playerTwo.score, 'two')
+      events.onUpdateGame(score, 'O', false)
+      gamePlay.checkForWin(gamePlay.winConditions, playerTwo.score, 'O')
       drawXO(gameBoardCells[score])
       playerTurn = 1
       return playerTurn
@@ -100,6 +101,7 @@ const gamePlay = (function () {
     for (let i = 0; i < winConditions.length; i++) {
       if (arrayContainsArray(winConditions[i], playerScore) === true) {
         playerHasWon = true
+        events.onUpdateGame(playerScore[i], playerWinner, true)
         victoryMessage.innerHTML = 'Player ' + playerWinner + ' wins!'
         return victoryMessage
       } else if (playerOne.score.length > 4) {
