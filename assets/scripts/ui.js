@@ -15,6 +15,12 @@ const onSignUpFailure = () => {
 }
 const onSignInSuccess = (responseData) => {
   $('#user-message').text('signed in successfully')
+  $('#modalLoginForm').modal('hide')
+  $('#change-password-button').show()
+  $('#sign-out-button').show()
+  $('#game-history-button').show()
+  $('#sign-up-button').hide()
+  $('#sign-in-button').hide()
   store.user = responseData.user
 }
 const onSignInFailure = () => {

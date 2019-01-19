@@ -19,12 +19,6 @@ const onSignIn = (event) => {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
   $('form').trigger('reset')
-  $('#modalLoginForm').modal('hide')
-  $('#change-password-button').show()
-  $('#sign-out-button').show()
-  $('#game-history-button').show()
-  $('#sign-up-button').hide()
-  $('#sign-in-button').hide()
 }
 const onChangePassword = (event) => {
   event.preventDefault()
