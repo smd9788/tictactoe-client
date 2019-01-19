@@ -1,6 +1,12 @@
 'use strict'
 const store = require('./store')
 
+$('#change-password-button').hide()
+$('#sign-out-button').hide()
+$('#game-history-button').hide()
+
+// AUTHENTICATION API UI MESSAGING
+
 const onSignUpSuccess = (responseData) => {
   $('#user-message').text('Registration successful!')
 }
@@ -28,8 +34,9 @@ const onSignOutFailure = () => {
   $('#user-message').text('error. you are not logged in')
 }
 
+// GAME API MESSAGING
+
 const onStartGameSuccess = (response) => {
-  $('#game-board').removeClass('hide')
   const gameData = response.game
   const cells = gameData.cells
   for (let i = 0; i < cells.length; i++) {
@@ -38,27 +45,25 @@ const onStartGameSuccess = (response) => {
   }
   store.game = gameData
   $('.box').html('')
-  $('#user-message').text('Successfully created a new game. Player ones turn.')
+  $('#user-message').text('Successfully created a new game. Player one\'s turn.')
   store.turn = 0
-  // console.log('store.game is:', store.game)
-  // // console.log('store is', store)
 }
+
 const onStartGameFailure = (response) => {
-  // console.log('response is' + response)
-  $('#user-message').text('Error creating a game.')
+  $('#user-message').text('Error creating a game. Please sign in.')
 }
+
 const onFindGamesSuccess = (response) => {
-  $('#user-message').text(`Game Plays: ${response.games.length}`)
+  $('#game-history-list').html(`Total Games Played: ${response.games.length}`)
 }
 const onFindGamesFailure = (response) => {
-  // console.log('response is' + response)
   $('#user-message').text('Error finding games.')
 }
 const onUpdateGameSuccess = (response) => {
-  // console.log('success response is: ', response)
+  console.log(response)
+  console.log(store.game = response.game)
 }
 const onUpdateGameFailure = (response) => {
-  // console.log('response is: ', response)
   $('#user-message').text('Error updating game.')
 }
 module.exports = {
@@ -74,6 +79,6 @@ module.exports = {
   onStartGameFailure: onStartGameFailure,
   onFindGamesSuccess: onFindGamesSuccess,
   onFindGamesFailure: onFindGamesFailure,
-  onUpdateGameSuccess: onUpdateGameSuccess,
-  onUpdateGameFailure: onUpdateGameFailure
+  onUpdateGameFailure: onUpdateGameFailure,
+  onUpdateGameSuccess: onUpdateGameSuccess
 }

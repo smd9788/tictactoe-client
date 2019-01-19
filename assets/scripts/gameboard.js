@@ -1,3 +1,6 @@
+const events = require('./events')
+const store = require('./store')
+
 const gameBoard = (function () {
   // select game board container
   const gameBoardContainer = document.getElementById('game-board')
@@ -45,17 +48,20 @@ const gamePlay = (function () {
     if (playerTurn === 1 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerOne.score.push(score)
       gridCellsPlayed.push(score)
+      events.onUpdateGame(score, 'X', false)
       // check for win immediately after move is pushed to score array
-      gamePlay.checkForWin(gamePlay.winConditions, playerOne.score, 'one')
+      gamePlay.checkForWin(gamePlay.winConditions, playerOne.score, 'X')
       drawXO(gameBoardCells[score])
       // set playerTurn to player two's turn
       playerTurn = 2
+
       return playerTurn
     }
     if (playerTurn === 2 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerTwo.score.push(score)
       gridCellsPlayed.push(score)
-      gamePlay.checkForWin(gamePlay.winConditions, playerTwo.score, 'two')
+      events.onUpdateGame(score, 'O', false)
+      gamePlay.checkForWin(gamePlay.winConditions, playerTwo.score, 'O')
       drawXO(gameBoardCells[score])
       playerTurn = 1
       return playerTurn
@@ -82,18 +88,22 @@ const gamePlay = (function () {
     [1, 4, 7],
     [2, 5, 8]
   ]
+
+  // callback function to compare two arrays
   function arrayContainsArray (arrayOne, arrayTwo) {
     return arrayOne.every(function (value) {
       return arrayTwo.indexOf(value) > -1
     })
   }
 
+  // use arrayContainsArray callback to compare X's and O's score to winConditions
   function checkForWin (winConditions, playerScore, playerWinner) {
     for (let i = 0; i < winConditions.length; i++) {
       if (arrayContainsArray(winConditions[i], playerScore) === true) {
         playerHasWon = true
+        events.onUpdateGame(playerScore[i], playerWinner, true)
         victoryMessage.innerHTML = 'Player ' + playerWinner + ' wins!'
-        return console.log('Player ' + playerWinner + ' wins!')
+        return victoryMessage
       } else if (playerOne.score.length > 4) {
         victoryMessage.innerHTML = 'The game is a draw'
       }
@@ -111,7 +121,7 @@ const gamePlay = (function () {
     playerHasWon = false
   }
   return { gridCellsPlayed, playTurn, checkForWin, winConditions, drawXO, resetGame }
-})()
+}())
 
 module.exports = {
   gameBoard,
