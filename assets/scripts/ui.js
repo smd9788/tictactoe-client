@@ -72,7 +72,6 @@ const onFindGamesFailure = (response) => {
 }
 const onUpdateGameSuccess = (response) => {
   console.log(response)
-  console.log(store.game = response.game)
 }
 const onUpdateGameFailure = (response) => {
   $('#user-message').text('Error updating game.')

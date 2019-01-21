@@ -1,5 +1,4 @@
 const events = require('./events')
-const store = require('./store')
 
 const gameBoard = (function () {
   // select game board container
