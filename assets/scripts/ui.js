@@ -34,6 +34,11 @@ const onChangePasswordFailure = () => {
 }
 const onSignOutSuccess = (responseData) => {
   $('#user-message').text('user signed out successfully')
+  $('#change-password-button').hide()
+  $('#sign-out-button').hide()
+  $('#game-history-button').hide()
+  $('#sign-up-button').show()
+  $('#sign-in-button').show()
   store.user = null
 }
 const onSignOutFailure = () => {
