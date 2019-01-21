@@ -1,4 +1,5 @@
-This project builds a tic-tac-toe game in the browser.
+This project builds a tic-tac-toe game in the browser. Check it out here:
+https://smd9788.github.io/tictactoe-client/
 
 Technologies Used:
 - JavaScript
@@ -13,16 +14,10 @@ manipulation. The gameboard is stored as an array, each players moves build thei
 own array. The game logic then compares each players array to the win condtions
 array to determine a winner.
 
-Known bugs:
-1. in the 'events.js' file my .catch prototypes do not trigger a user-message unless already signed in
-
-
 Unsolved Problems/Missing features:
-1. messaging system for when an invalid move is made.
-2. Game API functionality. I need to implement game saving and statistics per requirements.
-3. Clean up asthetics and CSS
-4. Create computer AI
-5. Create multiplayer mode
+1. Add responsive design for diff sized devices
+2. Create computer AI
+3. Create multiplayer mode
 
 Wireframe/Concept planning:
 https://i.imgur.com/o88XPAq.jpg
