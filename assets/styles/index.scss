@@ -6,8 +6,8 @@
 }
 
 nav {
+  align-items: center;
   background-color: #ff6600;
-  font-size: 1.5rem;
   height: 4rem;
   margin: 1px 0;
 }
@@ -32,16 +32,18 @@ h1 {
 
 h2 {
   font-size: 7rem;
+  margin-top: 5px;
 }
 
 h4 {
-  color: white;
+  color: #001133;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  position: relative;
   width: 450px;
 }
 
@@ -63,7 +65,7 @@ h4 {
   font-size: 50px;
   height: 0;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0;
   padding-bottom: 33.33%;
   text-align: center;
   width: 33.33%;
@@ -93,16 +95,22 @@ button {
   padding: 15px;
 }
 
-input {
-  border: 1px solid;
-}
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 767px) {
+  h1 {
+    font-size: 3rem;
+  }
 
-#victory-message {
-  text-align: center;
-}
+  h2 {
+    font-size: 4rem;
+    margin-top: 10px;
+  }
 
-.credentials-menu {
-  background-color: #FF6600;
-  color: #001133;
-  display: flex;
+  h4 {
+    font-size: 1.5rem;
+  }
+  .container {
+    width: 85vw;
+  }
 }
