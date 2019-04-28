@@ -1,5 +1,3 @@
-const events = require('./events')
-
 const gameBoard = (function () {
   // select game board container
   const gameBoardContainer = document.getElementById('game-board')
@@ -43,11 +41,11 @@ const gamePlay = (function () {
   let playerHasWon = false
   const victoryMessage = document.getElementById('user-message')
   const playTurn = function (score) {
+    victoryMessage.innerHTML = ''
     // first check whos turn it is. then push their marker to their respective score array
     if (playerTurn === 1 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerOne.score.push(score)
       gridCellsPlayed.push(score)
-      events.onUpdateGame(score, 'X', false)
       // check for win immediately after move is pushed to score array
       gamePlay.checkForWin(gamePlay.winConditions, playerOne.score, 'X')
       drawXO(gameBoardCells[score])
@@ -59,7 +57,6 @@ const gamePlay = (function () {
     if (playerTurn === 2 && playerHasWon === false && !gridCellsPlayed.includes(score)) {
       playerTwo.score.push(score)
       gridCellsPlayed.push(score)
-      events.onUpdateGame(score, 'O', false)
       gamePlay.checkForWin(gamePlay.winConditions, playerTwo.score, 'O')
       drawXO(gameBoardCells[score])
       playerTurn = 1
@@ -100,7 +97,6 @@ const gamePlay = (function () {
     for (let i = 0; i < winConditions.length; i++) {
       if (arrayContainsArray(winConditions[i], playerScore) === true) {
         playerHasWon = true
-        events.onUpdateGame(playerScore[i], playerWinner, true)
         victoryMessage.innerHTML = 'Player ' + playerWinner + ' wins!'
         return victoryMessage
       } else if (playerOne.score.length > 4) {
@@ -121,6 +117,10 @@ const gamePlay = (function () {
   }
   return { gridCellsPlayed, playTurn, checkForWin, winConditions, drawXO, resetGame }
 }())
+
+$(() => {
+  $('#reset-game').on('click', gamePlay.resetGame)
+})
 
 module.exports = {
   gameBoard,
