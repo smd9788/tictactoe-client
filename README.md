@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-# UPDATE: As of 4/28/18 I have stripped out the authentication functionality from the deployed app.
+#### UPDATE: As of 4/28/18 I have stripped out the authentication functionality from the deployed app.
 
 The is the first JavaScript app I developed. It is exactly what you think it is. A very clean, and visually pleasing way to play Tic-Tac-Toe on your local machine. This is a front end project, where I utilized a third party API, developed by General Assembly.
 
