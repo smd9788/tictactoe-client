@@ -1,30 +1,36 @@
-This project builds a tic-tac-toe game in the browser. Check it out here:
-https://smd9788.github.io/tictactoe-client/
+# Tic-Tac-Toe
 
-Technologies Used:
-- JavaScript
-- HTML
-- CSS
-- jQuery
-- AJAX requests from preconfigured API
+The is the first JavaScript app I ([@smd9788]) developed. It is exactly what you think it is. A very clean, and visually pleasing way to play Tic-Tac-Toe on your local machine. This is a front end project, where I utilized a third party API, developed by General Assembly.
 
-Process:
-I started by building a base HTML template as to serve as a foundation for my DOM
-manipulation. The gameboard is stored as an array, each players moves build their
-own array. The game logic then compares each players array to the win condtions
-array to determine a winner.
+-   [View the deployed client here](https://smd9788.github.io/tictactoe-client/)
 
-Unsolved Problems/Missing features:
-1. Add responsive design for diff sized devices
-2. Create computer AI
-3. Create multiplayer mode
+## Setup and installation
+1.  [Fork and clone](https://github.com/smd9788/tictactoe-client) this repository
+2.  Create a branch for edits (_suggested_)
+3.  Install dependencies with `npm install`.
+4.  Run local host for viewing live-changes with `grunt serve`.
 
-Wireframe/Concept planning:
-https://i.imgur.com/o88XPAq.jpg
+## Technologies used
 
-User stories:
-- 'As a user, I want to choose my game piece'
-- 'As a user, I want to see my stats so I can improve'
-- 'As a user, I want to set my theme so I can choose the most suitable option for me'
-- 'As a user, I want to play other users, so I can see how I match up'
-- 'As a user, I want to login'
+-   JavaScript
+-   jQuery
+-   Hypertext Markup Language (HTML)
+-   Cascading Style Sheets (CSS)
+-   cURL
+
+##  Work in progress
+-   Display games won and games lost. Results are saved in API, but not displayed.
+-   Responsive design for all screensizes.
+-   Accessability features.
+-   Implement AI algorithm so users can play against a computer.
+
+### Wireframes and user stories
+
+#### [Wireframes located here.](https://i.imgur.com/o88XPAq)
+#### User stories:
+
+-   As an unregistered user, I would like to play a game of Tic-Tac-Toe without saving results.
+-   As a registered user, I would like to sign up/in with email and password.
+-   As a signed in user, I would like to change password.
+-   As a signed in user, I would like to sign out.
+-   As a signed in user, I would like to play Tic-Tac-Toe and have all game results saved to my profile.
