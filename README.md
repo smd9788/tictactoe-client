@@ -1,6 +1,8 @@
 # Tic-Tac-Toe
 
-The is the first JavaScript app I ([@smd9788]) developed. It is exactly what you think it is. A very clean, and visually pleasing way to play Tic-Tac-Toe on your local machine. This is a front end project, where I utilized a third party API, developed by General Assembly.
+# UPDATE: As of 4/28/18 I have stripped out the authentication functionality from the deployed app.
+
+The is the first JavaScript app I developed. It is exactly what you think it is. A very clean, and visually pleasing way to play Tic-Tac-Toe on your local machine. This is a front end project, where I utilized a third party API, developed by General Assembly.
 
 -   [View the deployed client here](https://smd9788.github.io/tictactoe-client/)
 
